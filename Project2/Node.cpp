@@ -26,3 +26,15 @@ std::string Node::getPayload()
 {
 	return this->payload;
 }
+
+std::string Node::toString()
+{
+	std::string debugOutput = "Node( Payload: ";
+	debugOutput += "\"" + this->payload + "\", ";
+	debugOutput += "nextNode: ";
+	if (nextNode == nullptr) debugOutput += "nullptr";
+	else debugOutput += "true";
+	debugOutput += " )";
+
+	return debugOutput;
+}

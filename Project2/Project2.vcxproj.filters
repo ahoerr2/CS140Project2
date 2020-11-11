@@ -21,6 +21,9 @@
     <ClCompile Include="ordered_list_driver.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="node_test_driver.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Node.h">
