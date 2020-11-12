@@ -21,7 +21,9 @@ public:
 
     //Creates a formatted debug string of the node ex. Node( Payload: "hi", nextNode: true)
     std::string toString(); 
-private:
+
     std::string payload;
     Node* nextNode{ nullptr };
+private:
+
 };
