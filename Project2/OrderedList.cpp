@@ -1,3 +1,5 @@
+//Source file for the Ordered Linked List Collection
+
 #include "Node.h"
 #include "OrderedList.h"
 #include <vector>
@@ -6,13 +8,10 @@ using namespace std;
 OrderedList::OrderedList() : first(nullptr)
 {}
 
-// 3) the insert() method 
-/* Function which takes in a Node by value
-(i.e., a copy) and inserts an equivalent Node into the
-list (i.e., a Node containing the same payload).
-When a Node is inserted, it should be placed into the correct
-position, as determined by the ordering of the payloads
-*/
+
+//Takes in, sorts, and inserts an input node in the Linked List collection
+//Each node is unique, nodes with the same payload are not added
+//Nodes are added to heap memory
 void OrderedList::insert(Node node)
 {
 	// list is nullptr or if the first node's payload is > node's payload, it is made the first node
@@ -48,9 +47,9 @@ void OrderedList::insert(Node node)
 	}
 }
 
-// 4) 
-/*Function which takes in a Node by a constant reference, finds the equivalent
-Node in the list(if it exists), removes itand returns a copy.*/
+//Removes a node in the list and returns the removed node
+//Returns a blank Node if no node with a matching payload is found
+//Takes in a contstant reference of the removal node
 Node OrderedList::remove(const Node& node)
 {
 	Node* current = first;
@@ -93,8 +92,7 @@ Node OrderedList::remove(const Node& node)
 
 
 
-//function which removes the first Node in the list and returns a copy.
-
+//Removes the first node in a list and returns a copy of the node
 Node OrderedList::removeFront()
 {
 	if (first != nullptr)
@@ -127,7 +125,7 @@ void OrderedList::clear()
 	}
 }
 
-// takes in another list by reference, removes its nodes and inserts them into the caller
+// Takes in another list by reference, removes its nodes and inserts them into the caller
 void OrderedList::absorb(OrderedList& list)
 {
 	do
@@ -137,6 +135,7 @@ void OrderedList::absorb(OrderedList& list)
 	} while (list.first != nullptr);
 }
 
+//Prints a formatted string of the Linked List Collection for debugging
 void OrderedList::printOrderedList()
 {
 
@@ -174,7 +173,7 @@ bool OrderedList::isEmpty()
 
 
 
-// destructor that deletes all the nodes in the list
+// Destructor that deletes all the nodes in the list
 OrderedList::~OrderedList()
 {
 	cout << "Destructor invokes..." << endl;
